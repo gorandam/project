@@ -1,11 +1,14 @@
 <?php
 
-//This class take care of our request our URL/class/method/
+
+//This class take care of our request our URL/class/method/ - interpret URL / Za odredjeni kontroler i odredjeni metod zelimo to npr GET
+
 class Bootstrap {
 	private $controller;// as URL this is user - class
 	private $action;// as URL this is register-action-method
-	private $request;
+	private $request;// 
 	
+	//Construct magic method 
 	public function __construct($request) {
 		$this->request = $request;
 		if($this->request['controller'] == "") {
@@ -21,14 +24,14 @@ class Bootstrap {
 		
 		
 	}
-	
+	// this public method will instatiate requested contoroller class as an object
 	public function createController() {
 		// Check Class
 		if(class_exists($this->controller)) {
 			$parents = class_parents($this->controller);
 			// Check Extend
 			if(in_array("Controller", $parents)) { // We check if basecontroller class exists
-				if(method_exists($this->controller, $this->action)) { //We check if method in contr exists
+				if(method_exists($this->controller, $this->action)) { //We check if method in contr exists(action)
 					return new $this->controller($this->action, $this->request);
 				
 				} else {
