@@ -11,7 +11,10 @@ require 'controllers/shares.php';
 require 'controllers/users.php';
 
 $bootstrap = new Bootstrap($_GET);// Break down URL commands with assistance with .htaccess 
-$controller = $bootstrap->createController();// Here $bootstrap class interpret which controller is being requested,instatiate it, and what method in this controller is being invoked
+var_dump($bootstrap);
+$controller = $bootstrap->createController();// Here $bootstrap class interpret which controller is being requested,instatiate it...
+//var_dump($controller);
+
 if($controller) {
 	$controller->executeAction();// We call method of our class
 }

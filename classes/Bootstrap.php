@@ -21,17 +21,16 @@ class Bootstrap {
 		} else {
 			$this->action = $this->request['action'];
 		}
-		
-		
-	}
+				
+}
 	// this public method will instatiate requested contoroller class as an object
 	public function createController() {
 		// Check Class
 		if(class_exists($this->controller)) {
-			$parents = class_parents($this->controller);
+			$parents = class_parents($this->controller);// return array of parents clases of the controller
 			// Check Extend
-			if(in_array("Controller", $parents)) { // We check if basecontroller class exists
-				if(method_exists($this->controller, $this->action)) { //We check if method in contr exists(action)
+			if(in_array("Controller", $parents)) { // We check if base controller class exists
+				if(method_exists($this->controller, $this->action)) { //We check if method in contr exists(action) in controller - first argument
 					return new $this->controller($this->action, $this->request);
 				
 				} else {
