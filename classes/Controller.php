@@ -1,4 +1,5 @@
 <?php
+
 //Other controllers extend from it
 abstract class Controller {
 	protected $request;// protected that other child controllers can acess it

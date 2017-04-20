@@ -1,7 +1,7 @@
 <?php
 
 
-//This class take care of our request our URL/class/method/ - interpret URL / Za odredjeni kontroler i odredjeni metod zelimo to npr GET
+//This class SETS ENVIRONMENT FOR OUR APLICATION - take care of our request our URL/class/method/ - interpret URL / Za odredjeni kontroler i odredjeni metod zelimo to npr GET
 
 class Bootstrap {
 	private $controller;// as URL this is user - class
