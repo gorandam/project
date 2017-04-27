@@ -10,5 +10,5 @@ define("DB_PASS", "123qwer");
 define("DB_NAME", "shareboard");
 
 //Define URL
-define("ROOT_PATH", $_SERVER["DOCUMENT_ROOT"] . "/project/");
-define("ROOT_URL", "http://localhost/project");
+define("ROOT_PATH","/project/");
+define("ROOT_URL", "http://localhost/project/");

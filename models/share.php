@@ -6,7 +6,5 @@ class ShareModel extends Model {
 		$rows = $this->resultSet();
 		//print_r($rows);
 		return $rows;
-		
 	}
-
 }
